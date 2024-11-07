@@ -14,14 +14,14 @@ function adicionar(){
 
     }
 }
-
+numeros.sort()
 function finalizar(){
 
-    numeros.sort
+    
 
     res.innerHTML += `Ao todo, temos ${numeros.length} números cadastrados. <br>`
-    res.innerHTML += `O maior valor informado foi ${numeros[2]} <br>`
-    res.innerHTML += `O menos valor informado foi ${numeros[0]} <br>`
+    res.innerHTML += `O menor valor informado foi ${numeros[0]} <br>`
+    res.innerHTML += `O maior valor informado foi ${numeros[numeros.length - 1]} <br>`
     res.innerHTML += `Somando todos os valores, temos <br>`
     res.innerHTML += `A média dos valores digitados é`
 }
