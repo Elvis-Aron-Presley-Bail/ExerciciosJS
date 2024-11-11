@@ -3,6 +3,7 @@ let res = document.getElementById('res')
 let numeros = []
 
 function adicionar(){
+
     let nume = Number(num.value)
 
     if(nume == 0 || nume > 100 || nume.length == 0){
@@ -19,19 +20,24 @@ function finalizar(){
 
     numeros.sort()
 
-    let maior = numeros[0]
-    let menor = numeros[0]
+    var soma = 0
+    var maior = 0
 
-    for (let pos in numeros){
-        if (numeros[pos] > maior)
-            maior = numeros[pos]
-        if (numeros[pos] < menor)
-            menor = numeros[pos]
+    for(var i = 0; i < numeros.length; i++) {
+        soma += numeros[i]
+    }
+
+    var media = soma / numeros.length
+
+    for(var big = 0; big < numeros.length; big++){
+        if(numeros[big] > maior){
+            maior = numeros[big]
+        }
     }
 
     res.innerHTML += `Ao todo, temos ${numeros.length} números cadastrados. <br>`
-    res.innerHTML += `O menor valor informado foi ${menor} <br>`
+    res.innerHTML += `O menor valor informado foi ${numeros[0]} <br>`
     res.innerHTML += `O maior valor informado foi ${maior} <br>`
-    res.innerHTML += `Somando todos os valores, temos <br>`
-    res.innerHTML += `A média dos valores digitados é`
+    res.innerHTML += `Somando todos os valores, temos ${soma} <br>`
+    res.innerHTML += `A média dos valores digitados é ${media}`
 }
