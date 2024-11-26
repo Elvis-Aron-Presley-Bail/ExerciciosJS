@@ -1,6 +1,6 @@
-function inserir(num){
+function inserir(numero){
     var res = document.getElementById('res').innerHTML
-    document.getElementById('res').innerHTML = res + num
+    document.getElementById('res').innerHTML = res + numero
 }
 
 function calcular(){
