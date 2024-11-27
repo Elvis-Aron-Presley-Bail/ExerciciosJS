@@ -1,13 +1,24 @@
 function inserir(numero){
-    var res = document.getElementById('res').innerHTML
-    document.getElementById('res').innerHTML = res + numero
+    var numeros = document.getElementById('res').innerHTML
+    document.getElementById('res').innerHTML = numeros + numero
 }
 
 function calcular(){
-    var res = document.getElementById('res').innerHTML
-    document.getElementById('res').innerHTML = eval(res)
+    var numeros = document.getElementById('res').innerHTML
+    document.getElementById('res').innerHTML = eval(numeros)
 }
 
 function apagar(){
-    var res = document.getElementById('res').innerHTML = ''
+    var numeros = document.getElementById('res').innerHTML = ''
+}
+
+function apagarultimo(){
+
+    var numeros = document.getElementById('res').innerHTML
+    var ultimo = document.getElementById('ultimo').innerHTML
+
+    for(let i = 0; i < numeros.length; i++){
+        ultimonumero[i] > numeros
+        ultimo.innerHTML = `É o ultimo numero ${ultimonumero}`
+    }
 }
