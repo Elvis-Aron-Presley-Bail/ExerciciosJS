@@ -29,7 +29,7 @@ function finalizar(){
     }
 
     for(let s = 0 ; s < valor.length ; s++){
-        soma = valor += valor[s]
+        soma += valor[s]
     }
 
     fim.innerHTML += `Ao todo são ${valor.length} valores <br>`
