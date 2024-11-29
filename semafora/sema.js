@@ -1,6 +1,6 @@
 var res = document.getElementById('res')
 
-let colocacao = 
+let colocacao = 10
 
 switch(colocacao){
     case 1:
