@@ -18,7 +18,7 @@ function apagarultimo(){
     var ultimo = document.getElementById('ultimo').innerHTML
 
     for(let i = 0; i < numeros.length; i++){
-        ultimonumero[i] > numeros
+        ultimonumero[i] > numeros.length
         ultimo.innerHTML = `É o ultimo numero ${ultimonumero}`
     }
 }
