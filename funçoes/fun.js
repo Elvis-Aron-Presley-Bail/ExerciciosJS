@@ -1,6 +1,6 @@
 var res = document.getElementById('res')
 
-let fun = function(v1,v2){
+/*let fun = function(v1,v2){
     return v1 + v2
 }
 
@@ -32,4 +32,15 @@ const soma = (...valoress)=>{
     return somar(valoress)
 }
 
-res.innerHTML = soma(10,20,30,45)
+res.innerHTML = soma(10,20,30,45)*/
+
+function* perguntas(){
+    var nome = yield 'Qual é o seu nome?'
+    var esporte = yield 'Qual é o seu esporte favorito?'
+    return `Meu nome e ${nome} e meu esporte favorito é ${esporte}`
+}
+
+var resporta = perguntas()
+res.innerHTML = resporta.next().value
+res.innerHTML += resporta.next('Elvis').value
+res.innerHTML += resporta.next('futebol').value
