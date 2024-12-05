@@ -7,9 +7,24 @@ function adicionar(){
 
     var num = Number(num1.value)
 
+    // function inserido(){
+    //     for(let co = 0; co < valores.length; co++){
+    //         if(num == valores[co]){
+    //             return false
+    //         }
+    //     }
+    // }
+
+    // if(num != inserido(true)){
+    //     alert('valor ja inserido')
+    // }
+
+
     if(num < 0 || num > 100){
         alert('insira um número valido')
-    }  else{
+    } 
+    
+    if(num >= 0 || num <=100){
     numeros.innerHTML += `Valor ${num} adicionado <br>`
     valores.push(num)
     }  
