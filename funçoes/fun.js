@@ -32,7 +32,7 @@ const soma = (...valoress)=>{
     return somar(valoress)
 }
 
-res.innerHTML = soma(10,20,30,45)*/
+res.innerHTML = soma(10,20,30,45)
 
 function* perguntas(){
     var nome = yield 'Qual é o seu nome?'
@@ -43,4 +43,10 @@ function* perguntas(){
 var resporta = perguntas()
 res.innerHTML = resporta.next().value
 res.innerHTML += resporta.next('Elvis').value
-res.innerHTML += resporta.next('futebol').value
+res.innerHTML += resporta.next('futebol').value*/
+
+const cursos = ['HTML', 'CSS', 'JS']
+
+cursos.map((nome,posicao)=>{
+    res.innerHTML += `Curso de ${nome}: Está na posição de número ${posicao} <br>`
+})
