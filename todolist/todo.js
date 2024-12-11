@@ -27,14 +27,13 @@ function finalizar(){
 
     var nume = Number(num.value)
 
-    nume.sort()
+    nume.sort
 
-    var maior = 0
+    let maior = 0
     
     for(let nu = 0 ; nu < valores.length ; nu++){
-        valores[nu] < maior
+        valores[nu] > maior
         maior = valores[nu]
-        
     }
 
     total.innerHTML = `Ao todo, temos ${valores.length} números cadastrados. <br>`
