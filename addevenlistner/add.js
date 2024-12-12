@@ -16,3 +16,10 @@ btn.addEventListener('click', ()=>{ //chamei o botão e adicionei um evento de c
         caixa2.appendChild(el) //chamei a caixa2 e utilizei o .appendChiel para adicionar elementos nessa div, adicionaei os elementos que estão dentro de 'el', que eu criei logo acima
     })
 })
+
+botaoVoltar.addEventListener('click', ()=>{
+    const desmarcado = [...document.querySelectorAll('.curso:not(.selecionado)')]
+    desmarcado.map((el)=>{
+        caixa1.appendChild(el)
+    })
+})
