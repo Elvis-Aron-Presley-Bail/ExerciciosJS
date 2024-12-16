@@ -1,36 +1,35 @@
-const caixa1 = document.querySelector('#caixa1');
-const btn_c1 = document.querySelector('#c1');
-const caixinha1 = document.querySelector('#caixinha1');
-const caixinha2 = document.querySelector('#caixinha2');
-const cursos = [...document.querySelectorAll('.curso')];
-const btn_copiar = document.querySelector('#btn_copiar');
+const caixinha1 = document.querySelector('#caixinha1')
+const caixinha2 = document.querySelector('#caixinha2')
+const caixa1 = document.querySelector('#caixa1')
+const curso = [...document.querySelectorAll('.curso')]
+const botao = document.querySelector('#btn_copiar')
 
-cursos.forEach((elementos1) => {
-    elementos1.addEventListener('dblclick', (clicouduas) => {
-        const clicouduasveses = clicouduas.target;
-        clicouduasveses.classList.toggle('selecionadoduas');
-    });
-});
+curso.map((cursos) => {
+    cursos.addEventListener('click',(clicado) => {
+        const cursosMarcados = clicado.target
+        cursosMarcados.classList.toggle('selecionado')
+    })
+    cursos.addEventListener('dblclick', (clicadoduas) => {
+        const marcadoDuas = clicadoduas.target
+        marcadoDuas.classList.toggle('selecionadoduas')
+    })
+})
 
-cursos.forEach((elementos2) => {
-    elementos2.addEventListener('click', (clicou) => {
-        const selecionado = clicou.target;
-        selecionado.classList.toggle('selecionado');
-    });
-});
+botao.addEventListener('click',() => {
+    const cursoSelecionado = [...document.querySelectorAll('.selecionado')]
+    const cursoSelecionadoDuas = [...document.querySelectorAll('.selecionadoduas')]
+    const descelacionado = [...document.querySelectorAll('.curso:not(.selecionado):not(.selecionadoduas)')]
 
-btn_copiar.addEventListener('click', () => {
-    const clicadouma = [...document.querySelectorAll('.selecionado')];
-    const clicadoduas = [...document.querySelectorAll('.selecionadoduas')];
-    clicadouma.forEach((aqui) => {
-        caixinha1.appendChild(aqui);
-    });
-    clicadoduas.forEach((ali) => {
-        caixinha2.appendChild(ali);
-    });
+    cursoSelecionado.map((seleci) => {
+        caixinha1.appendChild(seleci)
+    })
 
-    const cursovoltar = [...document.querySelectorAll('.curso:not(.selecionado):not(.selecionadoduas)')];
-    cursovoltar.forEach((voltar) => {
-        caixa1.appendChild(voltar);
-    });
-});
+    cursoSelecionadoDuas.map((seleciduas) => {
+        caixinha2.appendChild(seleciduas)
+    })
+
+    descelacionado.map((naomarcado) => {
+        caixa1.appendChild(naomarcado)
+    })
+
+})
