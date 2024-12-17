@@ -6,8 +6,13 @@ cursos.map((el,chave)=>{
     novoElemento.setAttribute('id','c'+chave+1)
     novoElemento.setAttribute('class','curso c1')
     novoElemento.innerHTML = el
-    caixa1.appendChild(novoElemento)
-    novoElemento.addEventListener('click', (evt)=>{
-        caixa1.removeChild(evt.target)
+    const lixeira = document.createElement('img')
+    lixeira.setAttribute('src','./lixeira.png')
+    lixeira.setAttribute('class','lixeira')
+    novoElemento.appendChild(lixeira)
+    lixeira.addEventListener('click',(evento)=>{
+        caixa1.removeChild(evento.target.parentNode)
     })
+    caixa1.appendChild(novoElemento)
 })
+
