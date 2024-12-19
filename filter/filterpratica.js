@@ -1,8 +1,12 @@
 const caixaCursos = document.querySelector('#caixaCursos')
+const cursoMovido = document.querySelector('#cursoMovido')
 const btn_c = [...document.querySelectorAll('.curso')]
 const c1_2 = document.querySelector('#c1_2')
 const cursos = ['HTML','CSS','JavaScript','PHP','React']
 const btnCursoSelecionado = document.getElementById('btnCursoSelecionado')
+const btnRemoverCurso = document.querySelector('#btnRemoverCurso')
+const moverCurso = document.querySelector('#moverCurso')
+const btnAdicionarNovoCurso = document.querySelector('#btnAdicionarNovoCurso')
 
 cursos.map((el,chave)=>{
     const novoElemento = document.createElement('div')
@@ -24,7 +28,35 @@ cursos.map((el,chave)=>{
     caixaCursos.appendChild(novoElemento)
 })
 
-btnCursoSelecionado.addEventListener('click', (evt)=>{
+const cursoMarcado = () =>{
     const todosRadios = [...document.querySelectorAll('input[type=radio]')]
+    let radioSelecionado = todosRadios.filter((ele) =>{
+        return ele.checked
+    })
+    return radioSelecionado[0]
+}
 
+btnCursoSelecionado.addEventListener('click', (evt)=>{
+    const re = cursoMarcado()
+    const cursoSelecionado = re.parentNode.previousSibling.textContent
+    alert('cursoSelecionado' + cursoSelecionado)
+})
+
+btnRemoverCurso.addEventListener('click', ()=>{
+    const re = cursoMarcado()
+    const cursoSelecionado = re.parentNode.parentNode
+    cursoSelecionado.remove()
+})
+
+moverCurso.addEventListener('click', ()=>{
+    const re = cursoMarcado()
+    const cursoSelecionado = re.parentNode.parentNode
+    cursoMovido.appendChild(cursoSelecionado)
+})
+
+btnAdicionarNovoCurso.addEventListener('click', ()=>{
+    const nomeCurso = document.querySelector('#nomeCurso')
+
+    nomeCurso.setAttribute('class', 'curso c1')
+    caixaCursos.appendChild(nomeCurso)
 })
