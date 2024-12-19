@@ -1,6 +1,9 @@
 const tarefas = document.querySelector('#tarefas')
 const botao = document.querySelector('#botao')
 const texto = document.querySelector('#texto')
+const itensRemovidos = document.querySelector('#itensRemovidos')
+const removidos = document.querySelector('#removidos')
+const bottao = document.querySelector('#ver')
 
 botao.addEventListener('click',()=>{
     
@@ -16,8 +19,22 @@ botao.addEventListener('click',()=>{
     tarefas.appendChild(tarefa)
     tarefa.appendChild(lixeira)
 
-    lixeira.addEventListener('click', (marcado) =>{
-        const remover = tarefa.remove(marcado.target.parentNode)
+    tarefa.addEventListener('click',(marcado)=>{
+        const itemSelecionado = marcado.target
+        itemSelecionado.classList.toggle('selecionado')
+    })
+
+    lixeira.addEventListener('click', () =>{
+        const marcados = [...document.querySelectorAll('.selecionado')]
+        marcados.map((elem)=>{
+            removidos.appendChild(elem)
+        })
+
+    })
+
+    bottao.addEventListener('click',()=>{
+        removidos.style.backgroundColor = 'blue'
     })
 
 })
+
