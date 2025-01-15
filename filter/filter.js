@@ -1,4 +1,4 @@
-const idades = [17,20,35,14,39,70,43,15]
+/*const idades = [17,20,35,14,39,70,43,15]
 const res = document.querySelector('#res')
 
 const filtro = idades.filter((idade)=>{
@@ -6,4 +6,14 @@ const filtro = idades.filter((idade)=>{
         return idade
 })
 
-res.innerHTML = filtro
+res.innerHTML = filtro*/
+
+const idades = [17,20,35,14,39,70,43,15]
+const res = document.querySelector('#res')
+
+const maior = idades.filter((val) =>{
+    if(val >= 18)
+        return val
+})
+
+res.innerHTML = maior
