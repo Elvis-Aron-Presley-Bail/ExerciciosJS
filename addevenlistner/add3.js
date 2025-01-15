@@ -5,7 +5,7 @@ const botaoCopiar = document.getElementById('btn_copiar')
 const botaoVoltar = document.getElementById('btn_voltar')
 const cursos = ['HTML' , 'CSS' , 'JS']
 
-caixas.map((el) =>{
+/*caixas.map((el) =>{
     el.addEventListener('click', (evt) =>{
         const marcado = evt.target
         marcado.classList.toggle('selecionado')
@@ -24,7 +24,7 @@ botaoVoltar.addEventListener('click', (evt) =>{
     naoSelecionado.map((el) =>{
         caixa1.appendChild(el)
     })
-})
+})*/
 
 
 cursos.map((el) =>{
@@ -33,5 +33,14 @@ cursos.map((el) =>{
     novoElemento.setAttribute('id' , 'c1')
     novoElemento.setAttribute('class' , 'curso c1')
 
+    const lixeira = document.createElement('img')
+    lixeira.setAttribute('src' , 'lixeira.png')
+    lixeira.setAttribute('class' , 'lixeira')
+
+    lixeira.addEventListener('click' , (evt) =>{
+        caixa1.removeChild(evt.target.parentNode)
+    })
+
+    novoElemento.appendChild(lixeira)
     caixa1.appendChild(novoElemento)
 })
