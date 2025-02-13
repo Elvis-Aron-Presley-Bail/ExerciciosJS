@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.tudo{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+
+.caixa{
+    display: grid;
+    border: 1px solid black;
+    width: 400px;
+    height: 500px;
+    margin: auto;
+}
+
+.curso{
+    display: flex;
+    width: 250px;
+    height: 50px;
+    border: 1px solid black;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.lixeira{
+    width: 30px;
+    height: 45px;
+    cursor: pointer;
+}
