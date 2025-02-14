@@ -17,6 +17,16 @@ cursos.map((el)=>{
     lixeira.setAttribute('class' , 'btn_lixeira')
     novoElemento.appendChild(lixeira)
 
+    novoElemento.addEventListener('click', (evt) =>{
+        const itemMarcado = evt.target
+        itemMarcado.classList.toggle('selecionado')
+    })
+
+    btnCursoSelecionado.addEventListener('click', (evt) =>{
+        const verMarcado = [...document.querySelectorAll('.selecionado')]
+        alert(verMarcado[0].firstChild.children[0].innerHTML)
+    })
+
     lixeira.addEventListener('click', (evt) =>{
         caixaCursos.removeChild(evt.target.parentNode)
     })
