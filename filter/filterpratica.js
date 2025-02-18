@@ -38,25 +38,36 @@ const cursoMarcado = () =>{
 
 btnCursoSelecionado.addEventListener('click', (evt)=>{
     const re = cursoMarcado()
+    if(re == undefined){
+        alert('Selecione algum curso')
+    }
     const cursoSelecionado = re.parentNode.previousSibling.textContent
     alert('cursoSelecionado' + cursoSelecionado)
 })
 
-btnRemoverCurso.addEventListener('click', ()=>{
+btnRemoverCurso.addEventListener('click', (evt)=>{
     const re = cursoMarcado()
+    if(re == undefined){
+        alert('Selecione algum curso')
+    }
     const cursoSelecionado = re.parentNode.parentNode
     cursoSelecionado.remove()
 })
 
-moverCurso.addEventListener('click', ()=>{
+moverCurso.addEventListener('click', (evt)=>{
     const re = cursoMarcado()
+    if(re == undefined){
+        alert('Selecione algum curso')
+    }
     const cursoSelecionado = re.parentNode.parentNode
     cursoMovido.appendChild(cursoSelecionado)
 })
 
 btnAdicionarNovoCurso.addEventListener('click', ()=>{
     const nomeCurso = document.querySelector('#nomeCurso')
-
     nomeCurso.setAttribute('class', 'curso c1')
-    caixaCursos.appendChild(nomeCurso)
+    caixaCursos.appendChild(nomeCurso.firstChild.textContent)
 })
+
+
+/*aula 44
