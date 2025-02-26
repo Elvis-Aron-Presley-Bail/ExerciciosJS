@@ -8,11 +8,13 @@ const btnRemoverCurso = document.querySelector('#btnRemoverCurso')
 const moverCurso = document.querySelector('#moverCurso')
 const btnAdicionarNovoCurso = document.querySelector('#btnAdicionarNovoCurso')
 
-cursos.map((ele,pos) =>{
+let indice = 0
+
+const criarNovoCurso =(curso)=>{
     const novoElemento = document.createElement('div')
-    novoElemento.setAttribute('id' , 'c' + pos)
+    novoElemento.setAttribute('id' , 'c' + indice)
     novoElemento.setAttribute('class' , 'curso c1')
-    novoElemento.innerHTML = ele
+    novoElemento.innerHTML = curso
 
     const comandos = document.createElement('div')
     comandos.setAttribute('class' , 'comandos')
@@ -20,10 +22,19 @@ cursos.map((ele,pos) =>{
     const radi = document.createElement('input')
     radi.setAttribute('type' , 'radio')
     radi.setAttribute('name' , 'rb_cursos')
-
-    caixaCursos.appendChild(novoElemento)
+    
     novoElemento.appendChild(comandos)
     comandos.appendChild(radi)
+
+    return novoElemento
+}
+
+cursos.map((ele,pos) =>{
+
+    const novoElemento = criarNovoCurso(ele)
+    caixaCursos.appendChild(novoElemento)
+    indice++
+    
 })
 
 const cursoMarcado = () =>{
